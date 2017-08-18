@@ -1,6 +1,6 @@
 @()(implicit request: Request[AnyContent])
 
-@main("main route") {
+@main("sub route") {
     Current URI @request.uri<br/>
     Relative Route @RelativeRoute.versioned("stylesheets/main.css")<br/>
     <a href="@RelativeRoute.versioned("stylesheets/main.css")">Relative Route Link</a>
