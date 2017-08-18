@@ -1,7 +1,10 @@
+@import RelativeRoute.callToBetterCall
 @()(implicit request: Request[AnyContent])
 
 @main("main route") {
     Current URI @request.uri<br/>
     Relative Route @RelativeRoute.versioned("stylesheets/main.css")<br/>
-    <a href="@RelativeRoute.versioned("stylesheets/main.css")">Relative Route Link</a>
+    <a href="@RelativeRoute.versioned("stylesheets/main.css")">Relative Route Link</a><br/><br/>
+
+    <a href="@routes.HomeController.sub().relative">Relative Sub Page Link (implicit conversion)</a>
 }

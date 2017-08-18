@@ -18,6 +18,11 @@ class HomeController @Inject() extends Controller {
    * a path of `/`.
    */
   def index = Action { implicit request =>
+    import RelativeRoute.callToRelativeCall
+    val foo: String = routes.HomeController.index()
+
+    import RelativeRoute.callToBetterCall
+    val bar = routes.HomeController.index().relative
     Ok(views.html.index())
   }
 
